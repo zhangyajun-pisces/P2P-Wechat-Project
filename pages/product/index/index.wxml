@@ -1,0 +1,160 @@
+<!--pages/test/index.wxml-->
+<view class="header">
+	<view class="search">
+		<navigator url="/pages/product/search/search" class="input">
+			<image class="icon"></image>
+			<text class="txt">搜索关键字</text>
+		</navigator>
+	</view>
+	<!-- 一级tab选项 -->
+	<view class="tabs">
+		<text wx:for="{{tabList}}"  wx:key="index" wx:for-item="item"  class="tab-item {{currentTab==index?'active':''}}"   data-current="{{index}}" bindtap="swichNav" id="current{{index}}">{{item.name}}</text>
+	</view>
+	<!-- 二级筛选条件 -->
+	<dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuSourceData='{{data1}}' dropDownMenuStyleData='{{data2}}' dropDownMenuFilterData='{{data3}}' bind:selectedItem='selectedItem' />
+</view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}px">
+	<!-- 第一页，政府定融 -->
+	<swiper-item>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true" bindscrolltolower='pullUpLoading'>
+			<navigator wx:for="{{list1}}" wx:key="index" wx:for-item="item" url="/pages/product/detail/detail?id={{item.id}}">
+				<view class="contentItem">
+					<view class="title">{{item.name}}</view>
+					<view class="info">产品评级：
+						<block wx:if="{{(item.trait%1)==0}}">
+							<!-- 整数正常显示就是 -->
+							<image wx:for="{{ item.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+						</block>
+						<block wx:if="{{(item.trait%1)!=0}}">
+							<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+							<image wx:for="{{ (item.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+							<image src='/images/product/bstar.png' />
+						</block>
+					</view>
+					<view class="info">产品亮点：{{item.dot}}</view>
+					<view class="bottom">
+						<view>{{item.risk}}</view>
+						<view>{{item.term}}</view>
+						<view>{{item.termRemarks}}</view>
+					</view>
+				</view>
+			</navigator>
+			<!--更多-->
+			<view class="weui-loadmore" style='' hidden="{{isHideLoadMore}}">
+				<view class="weui-loading"></view>
+				<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+			</view>
+			<view class="search-result-empty" wx:if="{{!list1.length}}">
+				<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+				<text class="text">未查找到您要搜索的记录</text>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<!-- 第二页 房产销融 -->
+	<swiper-item>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true" bindscrolltolower='pullUpLoading2'>
+			<navigator wx:for="{{list2}}" wx:key="index" wx:for-item="item" url="/pages/product/detail/detail?id={{item.id}}">
+				<view class="contentItem">
+					<view class="title">{{item.name}}</view>
+					<view class="info">产品评级：
+						<block wx:if="{{(item.trait%1)==0}}">
+							<!-- 整数正常显示就是 -->
+							<image wx:for="{{ item.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+						</block>
+						<block wx:if="{{(item.trait%1)!=0}}">
+							<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+							<image wx:for="{{ (item.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+							<image src='/images/product/bstar.png' />
+						</block>
+					</view>
+					<view class="info">产品亮点：{{item.dot}}</view>
+					<view class="bottom">
+						<view>{{item.risk}}</view>
+						<view>{{item.term}}</view>
+						<view>{{item.termRemarks}}</view>
+					</view>
+				</view>
+			</navigator>
+			<!--更多-->
+			<view class="weui-loadmore" style='' hidden="{{isHideLoadMore2}}">
+				<view class="weui-loading"></view>
+				<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+			</view>
+			<view class="search-result-empty" wx:if="{{!list2.length}}">
+				<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+				<text class="text">未查找到您要搜索的记录</text>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<swiper-item>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true" bindscrolltolower='pullUpLoading3'>
+			<navigator wx:for="{{list3}}" wx:key="index" wx:for-item="item" url="/pages/product/detail/detail?id={{item.id}}">
+				<view class="contentItem">
+					<view class="title">{{item.name}}</view>
+					<view class="info">产品评级：
+						<block wx:if="{{(item.trait%1)==0}}">
+							<!-- 整数正常显示就是 -->
+							<image wx:for="{{ item.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+						</block>
+						<block wx:if="{{(item.trait%1)!=0}}">
+							<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+							<image wx:for="{{ (item.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+							<image src='/images/product/bstar.png' />
+						</block>
+					</view>
+					<view class="info">产品亮点：{{item.dot}}</view>
+					<view class="bottom">
+						<view>{{item.risk}}</view>
+						<view>{{item.term}}</view>
+						<view>{{item.termRemarks}}</view>
+					</view>
+				</view>
+			</navigator>
+			<!--更多-->
+			<view class="weui-loadmore" style='' hidden="{{isHideLoadMore3}}">
+				<view class="weui-loading"></view>
+				<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+			</view>
+			<view class="search-result-empty" wx:if="{{!list3.length}}">
+				<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+				<text class="text">未查找到您要搜索的记录</text>
+			</view>
+		</scroll-view>
+	</swiper-item>
+  <!-- 第四页 后端工程 -->
+	<swiper-item>
+	<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true" bindscrolltolower='pullUpLoading4'>
+			<navigator wx:for="{{list4}}" wx:key="index" wx:for-item="item" url="/pages/product/detail/detail?id={{item.id}}">
+				<view class="contentItem">
+					<view class="title">{{item.name}}</view>
+					<view class="info">产品评级：
+						<block wx:if="{{(item.trait%1)==0}}">
+							<!-- 整数正常显示就是 -->
+							<image wx:for="{{ item.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+						</block>
+						<block wx:if="{{(item.trait%1)!=0}}">
+							<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+							<image wx:for="{{ (item.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+							<image src='/images/product/bstar.png' />
+						</block>
+					</view>
+					<view class="info">产品亮点：{{item.dot}}</view>
+					<view class="bottom">
+						<view>{{item.risk}}</view>
+						<view>{{item.term}}</view>
+						<view>{{item.termRemarks}}</view>
+					</view>
+				</view>
+			</navigator>
+			<!--更多-->
+			<view class="weui-loadmore" style='' hidden="{{isHideLoadMore4}}">
+				<view class="weui-loading"></view>
+				<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+			</view>
+			<view class="search-result-empty" wx:if="{{!list4.length}}">
+				<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+				<text class="text">未查找到您要搜索的记录</text>
+			</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>

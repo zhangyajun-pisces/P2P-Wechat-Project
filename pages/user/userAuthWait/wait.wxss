@@ -1,0 +1,100 @@
+
+/* pages/user/userinfo/userinfo.wxss */
+.content{
+  width: 100%;  
+  height: 100%;  
+  position: absolute;
+  /* padding:5px; */
+  font-size: 14px;
+  box-sizing: border-box;  
+  background-color: #fff;
+}
+
+
+
+
+
+.userinfo{
+  margin-top: 10px;
+}
+
+
+.userinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;/*这里可以不写，flex布局默认方向横向即row*/
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); */
+  background: #fff;
+  border-radius: 5px;
+}
+
+
+.info{
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px;
+  min-height: 200rpx;
+}
+
+
+
+.img26{
+  width: 26rpx;height: 26rpx;
+}
+.img22{
+  width: 13rpx;height: 23rpx;
+}
+
+.txt99{
+  color: #999999;
+  padding-left:10rpx;
+  font-size: 12px;
+}
+
+
+
+.right{
+  flex: 1;
+  text-align: right;
+  padding-top: 10rpx;
+}
+
+.content .row{
+  display: flex;
+  padding: 6px 0 15px 0;
+  margin: 0px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.col-lg-3 {
+  width: 33.3%;
+  height: auto;
+  padding-top:10rpx;
+}
+.headimg{
+  width: 100%;
+  height: 160rpx;
+}
+.txt-18f{
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5rpx；
+}
+.foot{
+  padding: 0 20px;
+  margin:20px 0;
+  text-align: center;
+}
+.foot .txt{
+  margin:20px 0;
+  color: #3699FF;
+  font-weight: 600;
+}

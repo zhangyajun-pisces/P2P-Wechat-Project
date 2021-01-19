@@ -1,0 +1,36 @@
+<!--pages/product/reservation/index.wxml-->
+<view class="content">
+	<view class="form-box">
+    <view class="form-item row">
+			<view class="col-lg-3 txt99">产品</view>
+			<view class="right">
+				<input value="{{info.name}}" disabled/>
+			</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">姓名</view>
+			<view class="right">
+				<input value="{{username}}" placeholder="请填写您的姓名" bindinput="bindUsernameInput" />
+				<image wx:if="{{ username.length > 0 }}" id="clear-username" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">手机</view>
+			<view class="right">
+				<input value="{{phone}}" placeholder="请填写您的手机号" bindinput="bindPhoneInput" />
+				<image wx:if="{{ phone.length > 0 }}" id="clear-phone" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+    <view class="form-item row">
+			<view class="col-lg-3 txt99">金额</view>
+			<view class="right">
+				<input value="{{money}}" type="digit" placeholder="请输入金额" bindinput="moneyChange" style="padding-right:40px;"/>
+        <text class="tip">万</text>
+				<image wx:if="{{ money.length > 0 }}" id="clear-money" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+	</view>
+	<view style="padding: 0 20px; margin: 20px 0px;">
+		<button type="primary" class="bt_rad" disabled="{{username=='' || phone=='' ||  money==''}}" bindtap="reservation">立即预约</button>
+	</view>
+</view>

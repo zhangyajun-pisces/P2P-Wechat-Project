@@ -1,0 +1,22 @@
+<view class="content">
+
+	<!-- <view class="top">
+		<view>风险承受力调查问卷</view>
+	</view> -->
+	<view >
+		<image class="headimg" mode="scaleToFill" src='../../../images/risk/risk.png'></image>
+	</view>
+
+	<view class="news">
+		<view style="font-weight: 700;font-size: 16px;padding: 5rpx">尊敬的投资者：</view>
+		<text style="font-weight: 500;font-size: 12px; padding: 10rpx;">
+			尊敬的投资者：为了便于您了解自身的风险承受能力，选择合适的投资产品和服务，请您填写以下风险承受力调查问卷。下列问题可协助评估您对投资产品和服务的风险承受能力，请您根据自身情况认真选择并对提交材料的真实、准确、完整负责。评估结果仅供参考，不构成投资建议。为了及时了解您的风险承受能力，我们建议您持续做好动态评估。我们承诺对您的所有个人资料保密。【填写说明】本问卷共由8道题组成，请您根据您的实际情况，如实填写，均为单项选择题。我们将根据您的填写情况以及参照《风险承受度分类评分表》，评估出您的风险承受能力。
+		</text>
+	</view>
+
+
+	<view style="padding: 0 20px; margin-bottom: 30px;margin-top: 30px;" bindtap="srartExam">
+		<button type="primary" class="bt_rad">开始评估</button>
+	</view>
+
+</view>

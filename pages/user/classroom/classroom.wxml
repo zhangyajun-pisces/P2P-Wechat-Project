@@ -1,0 +1,31 @@
+<!--pages/user/classroom/classroom.wxml-->
+<wxs module="tutil" src="../../../utils/date.wxs"></wxs>
+<view class="content">
+	<scroll-view scroll-y="true" class="scoll-h" 
+  style="height:{{winHeight}}px" bindscrolltolower='loadMore'>
+		<navigator url="/pages/user/classDetail/classDetail?id={{item.id}}" 
+    class="info" wx:for="{{dataList}}" wx:key="index" wx:for-item="item" data-id="{{item.noticeId}}">
+			<view class="row">
+				<view class="col-5">
+					<view class="rtitle">{{item.title}}</view>
+					<view class="classdate">{{item.date}}</view>
+				</view>
+			
+				<view class="right"> 
+          <image   style="width: 250rpx;height: 100%; " src="{{item.img}}"></image>
+        </view>
+			</view>
+			<!-- <view class="row"> 
+      	<text class="col-5">{{item.date}}</text>
+        </view> -->
+		</navigator>
+		<!--更多-->
+		<view class="weui-loadmore" style='' hidden="{{isHideLoadMore}}">
+			<view class="weui-loading"></view>
+			<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+		</view>
+		<view class="weui-loadmore weui-loadmore_line" style='' hidden='{{!isHideLoadMore}}'>
+			<view class="weui-loadmore__tips">已经到底啦</view>
+		</view>
+	</scroll-view>
+</view>

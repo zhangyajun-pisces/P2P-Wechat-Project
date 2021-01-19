@@ -1,0 +1,25 @@
+<view class="content">
+	<view class="title">
+		<image class="img32" src="../../../images/success.png" />
+		<text style="line-height: 30px;">已实名验证</text>
+	</view> 
+
+	<view class="form-box">
+
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">姓名</view>
+			<view class="right">{{info.name}}
+			</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">证件类型</view>
+			<view class="right">居民身份证	</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">证件号码</view>
+			<view class="right">	{{info.idNo}}		</view>
+		</view>
+	</view>
+
+
+</view>

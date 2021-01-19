@@ -1,0 +1,57 @@
+<!--pages/product/search/search.wxml-->
+<scroll-view class="container">
+	<view class="search-header">
+		<view class="input-box">
+			<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png"></image>
+			<input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" placeholder="关键字" />
+			<image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/clearIpt-f71b83e3c2.png"></image>
+		</view>
+		<view class="srarch" bindtap="goSearch">搜索</view>
+		<!-- <view class="right" bindtap="closeSearch">取消</view> -->
+	</view>
+	<view class="no-search" wx:if="{{ !searchStatus}}">
+		<view class="search-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+			<view class="h">
+				<text class="title">历史记录</text>
+				<image class="icon" bindtap="clearHistory" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/del1-93f0a4add4.png"></image>
+			</view>
+			<view class="b">
+				<view class="item" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{historyKeyword}}" wx:key="keyword" hover-class="navigator-hover">{{item.keyword}}</view>
+			</view>
+		</view>
+		<view class="shelper-list" wx:if="{{keyword}}">
+			<view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" wx:key="id" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
+		</view>
+	</view>
+
+	<!-- 搜索结果展示 -->
+	<view class="search-result" wx:if="{{ searchStatus && list.length}}">
+		<view class="content">
+			<navigator  url="/pages/product/detail/detail?id={{item.id}}" class="contentItem" wx:for="{{list}}" wx:key="item{{index}}">
+				<view class="title">{{item.name}}</view>
+				<view class="info">产品评级：
+					<block wx:if="{{(item.trait%1)==0}}">
+						<!-- 整数正常显示就是 -->
+						<image wx:for="{{ item.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+					</block>
+					<block wx:if="{{(item.trait%1)!=0}}">
+						<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+						<image wx:for="{{ (item.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+						<image src='/images/product/bstar.png' />
+					</block>
+				</view>
+				<view class="info">产品亮点：{{item.dot}}</view>
+				<view class="bottom">
+					<view>{{item.risk}}</view>
+					<view>{{item.term}}</view>
+					<view>{{item.termRemarks}}</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<view class="search-result-empty" wx:if="{{!list.length && searchStatus}}">
+		<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+		<text class="text">未查找到您要搜索的记录</text>
+	</view>
+</scroll-view>

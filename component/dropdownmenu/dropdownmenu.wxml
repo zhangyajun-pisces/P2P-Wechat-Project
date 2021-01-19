@@ -1,0 +1,41 @@
+<view class="nav">
+  <view class="nav-child borders {{source_open? 'active' : ''}}" bindtap="tapSourceNav" hidden='{{dropDownMenuSourceData.length > 0 ? false : true}}' data-nav="2">
+    <view class="nav-title">{{selected_source_name.length > 0 ?selected_source_name : dropDownMenuTitle[0]}}</view>
+    <view class="icon"></view>
+  </view>
+  <view class="nav-child borders-right {{style_open? 'active' : ''}}" bindtap="tapStyleNav" hidden='{{dropDownMenuStyleData.length > 0 ? false : true}}' data-nav="3">
+    <view class="nav-title">{{selected_style_name.length > 0 ?selected_style_name : dropDownMenuTitle[1]}}</view>
+    <view class="icon"></view>
+  </view>
+  <view class="nav-child {{filter_open ? 'active' : ''}}" bindtap="tapFilterNav" hidden='{{dropDownMenuFilterData.length > 0 ? false : true}}' data-nav="4">
+    <view class="nav-title">{{selected_filter_name.length > 0 ?selected_filter_name : dropDownMenuTitle[2]}}</view>
+    <view class="icon"></view>
+  </view>
+</view>
+<view class="container container_hd {{source_open ? 'show' : 'disappear'}} ">
+  <view class='z-height'>
+    <view>
+      <block wx:for="{{dropDownMenuSourceData}}" wx:key="unique">
+        <view class="sortitem {{selected_source_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' bindtap='selectSourceItem'> {{item.title}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="container container_hd {{style_open ? 'show' : 'disappear'}} ">
+  <view class='z-height'>
+    <view>
+      <block wx:for="{{dropDownMenuStyleData}}" wx:key="unique">
+        <view class="sortitem {{selected_style_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' bindtap='selectStyleItem'> {{item.title}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="container container_hd {{filter_open ? 'show' : 'disappear'}} ">
+  <view class='z-height'>
+    <view>
+      <block wx:for="{{dropDownMenuFilterData}}" wx:key="unique">
+        <view class="sortitem {{selected_filter_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' bindtap='selectFilterItem'> {{item.title}}</view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<wxs module="date" src="../../../utils/date.wxs"></wxs>
+
+<scroll-view scroll-x="true" class="tabs" scroll-with-animation="true" scroll-into-view="{{toView}}">
+	<text wx:for="{{tabList}}" wx:key="index" wx:for-item="item" class="tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="swichTab" id="current{{index}}">{{item.name}}</text>
+</scroll-view>
+<swiper class="tab-content" current="{{currentTab}}" duration="500" bindchange="scollTab" style="height:{{winHeight}}px">
+	<!-- 第一页  待受理-->
+	<swiper-item style="width:100%;height:100%;">
+		<view class="search-result-empty" wx:if="{{!orderList.length}}">
+			<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+			<text class="text">未查找到您要搜索的记录</text>
+		</view>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true">
+			<view class="contentItem" wx:for="{{orderList}}" wx:key="index"  data-status='1' data-orderid="{{item.orderId}}" bindtap="reservationDetail">
+				<view class="row">
+					<view class="col-3">预约产品</view>
+					<view class="right">{{item.productName}}</view>
+				</view>
+				<view class="row">
+					<view class="col-3">预约金额</view>
+					<view class="right">{{item.amount}} 万</view>
+				</view>
+				<view class="row">
+					<view class="col-3">预约时间</view>
+						<view class="right">{{item.createDate}}</view>
+					<!-- <view class="right">{{data.formatTime(item.createDate,'yyyy-MM-dd')}}</view> -->
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<!-- 第二页  已签约-->
+	<swiper-item style="width:100%;height:100%;">
+		<view class="search-result-empty" wx:if="{{!orderList.length}}">
+			<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+			<text class="text">未查找到您要搜索的记录</text>
+		</view>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true">
+			<view class="contentItem" wx:for="{{orderList}}" wx:key="index" wx:for-item="item" data-status='2' data-orderId="{{item.orderId}}" bindtap="reservationDetail">
+				<view class="row">
+					<view class="col-3">签约产品</view>
+					<view class="right">{{item.productName}}</view>
+				</view>
+				<view class="row">
+					<view class="col-3">签约金额</view>
+					<view class="right">{{item.amount}} 万</view>
+				</view>
+				<view class="row">
+					<view class="col-3">签约时间</view>
+					<view class="right">{{item.defineDate}}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<!-- 第三页  已取消-->
+	<swiper-item style="width:100%;height:100%;">
+		<view class="search-result-empty" wx:if="{{!orderList.length}}">
+			<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+			<text class="text">未查找到您要搜索的记录</text>
+		</view>
+		<scroll-view scroll-y="true" class="scoll-h" enable-back-to-top="true">
+			<view class="contentItem" wx:for="{{orderList}}" wx:key="index" wx:for-item="item" data-status='3' data-orderId="{{item.orderId}}" bindtap="reservationDetail">
+				<view class="row">
+					<view class="col-3">预约产品</view>
+					<view class="right">{{item.productName}}</view>
+				</view>
+				<view class="row">
+					<view class="col-3">预约金额</view>
+					<view class="right">{{item.amount}} 万</view>
+				</view>
+				<view class="row">
+					<view class="col-3">取消时间</view>
+					<view class="right">{{item.cancelDate}}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+
+</swiper>

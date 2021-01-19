@@ -1,0 +1,136 @@
+
+/* pages/user/userinfo/userinfo.wxss */
+.content{
+  width: 100%;  
+  height: 100%;  
+  position: absolute;
+  /* padding:5px; */
+  font-size: 14px;
+  box-sizing: border-box;  
+  background-color: #f4f4f4;
+}
+.title{
+  background-color: #D6ECFF;
+  padding: 15rpx 5rpx 5rpx 20rpx;
+}
+.img32{
+  width: 32rpx;height: 32rpx;
+  margin: 0rpx 10rpx;
+}
+
+
+
+
+.userinfo{
+  margin-top: 10px;
+}
+
+
+.userinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;/*这里可以不写，flex布局默认方向横向即row*/
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); */
+  background: #fff;
+  border-radius: 5px;
+}
+
+
+.info{
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px;
+  min-height: 200rpx;
+}
+
+
+
+
+.img22{
+  width: 13rpx;height: 23rpx;
+}
+
+.txt99{
+  color: #999999;
+  padding-left:10rpx;
+  font-size: 12px;
+}
+
+
+
+.right{
+  flex: 1;
+  text-align: left;
+  padding-top: 10rpx;
+ }
+
+.content .row{
+  display: flex;
+  padding: 6px 0 15px 0;
+  margin: 0px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.col-lg-2 {
+  width: 20%;
+  height: auto;
+  padding-top:10rpx;
+}
+.col-lg-3 {
+  width: 33.3%;
+  height: auto;
+  padding-top:10rpx;
+}
+
+.form-box {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /* padding: 0 40rpx; */
+  margin-top: 10px;
+  background: #fff;
+}
+
+.form-item {
+  position: relative;
+  background: #fff;
+  height: 96rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.form-item .username, .form-item .idtype, .form-item .idcard {
+  position: absolute;
+  top: 26rpx;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 44rpx;
+  background: #fff;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.form-item .clear {
+  position: absolute;
+  top: 26rpx;
+  right: 18rpx;
+  z-index: 2;
+  display: block;
+  background: #fff;
+  height: 44rpx;
+  width: 44rpx;
+}
+.waring{
+  padding: 10px;
+  color: #999999;
+  font-size: 11px;
+}

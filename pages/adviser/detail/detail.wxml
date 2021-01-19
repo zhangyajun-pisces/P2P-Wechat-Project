@@ -1,0 +1,57 @@
+<view class="content">
+
+	<view class="userinfo">
+		<image class="mp" src="../../../images/log.png" />
+		<view class="r_txt">
+			<view>
+				<view class="title">{{userinfo.name}}</view>
+				<view>
+					<image class="img26" src="../../../images/adviser/zhiye.png" />
+					<text class="txt99">{{userinfo.role}}</text></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="introduce">
+		<view class="title"><text class="sp"> </text> 个人介绍</view>
+		<view class="i_text">{{userinfo.introduce}}</view>
+	</view>
+
+
+
+	<view class="introduce">
+
+		<view class="row">
+			<text class="col-lg-3 i_text">手机号码</text>
+			<view class="right">{{userinfo.mobile}}
+				<image style="width: 26rpx;height: 26rpx;" src="../../../images/adviser/phone2.png" />
+			</view>
+		</view>
+
+		<view class="row">
+			<text class="col-lg-3 i_text">微信</text>
+			<view class="right">{{userinfo.wxNo}}
+				<text class="i_text" style="padding-left: 10px;" bindtap='copyText' data-text="{{userinfo.wxNo}} ">复制</text>
+			</view>
+		</view>
+		<view class="row">
+			<text class="col-lg-3 i_text">公司</text>
+			<view class="right">{{userinfo.company}}
+				<text class="i_text" style="padding-left: 10px;" bindtap='copyText' data-text="{{userinfo.company}} ">复制</text></view>
+		</view>
+
+		<view class="row">
+			<text class="col-lg-3 i_text">公司地址</text>
+			<view class="right">{{userinfo.companyAddress}}
+				<text class="i_text" style="padding-left: 10px;" bindtap='copyText' data-text="{{userinfo.companyAddress}} ">复制</text>
+			</view>
+		</view>
+	</view>
+	<view style="padding: 0 20px; margin-bottom: 30px;">
+	    <button type="primary" class="bt_rad" bindtap="saveImage">分享名片</button>
+	</view>
+
+
+</view>
+
+<canvas canvas-id='image_canvas' hidden="{{hiddenCanvas}}" style='width:{{canvas_width}}px;height:{{canvas_height}}px;position:absolute;bottom:-{{canvas_height+150}}px;'></canvas>

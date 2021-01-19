@@ -1,0 +1,34 @@
+<view class="container">
+
+	<view class="form-box">
+		<view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">手机号</view>
+				<input style="padding-left: 60rpx;" value="{{mobile}}" disabled />
+				<image wx:if="{{ phone.length > 0 }}" id="clear-phone" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+
+
+		<view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">短信码</view>
+				<input style="padding-left: 60rpx;" value="{{vercode}}" placeholder="请输入短信验证码" bindinput="bindVerCodeInput" />
+				<!-- <image wx:if="{{vercode.length > 0 }}" id="clear-vercode" class="clear" src="/images/clear_input.png" catchtap="clearInput"/> -->
+ 				<view style="line-height: 100rpx; ">
+					<text bindtap="getSmsCode" style="color:{{getSmsCodeBtnColor}}" wx:if="{{getSmsCodeBtnTxt=='发送验证码'}}">{{getSmsCodeBtnTxt}}</text>
+					<text style="color:{{getSmsCodeBtnColor}}"  wx:if="{{getSmsCodeBtnTxt!='发送验证码'}}">{{getSmsCodeBtnTxt}}</text>
+				</view>
+			</view>
+		</view>
+
+
+
+		<view style="padding: 0 20px; margin-bottom: 30px;margin-top: 30px;">
+			<button type="primary" class="bt_rad" bindtap="next" disabled="{{!registDisabled}}">下一步</button>
+		</view>
+
+	</view>
+
+
+</view>

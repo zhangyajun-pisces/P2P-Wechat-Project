@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/adviser/adviser",
+    "pages/adviser/detail/detail",
+    "pages/adviser/search/search",
+    "pages/company/company",
+    "pages/auth/login/login",
+    "pages/auth/phoneLogin/phoneLogin",
+    "pages/h5web/index",
+    "pages/product/index/index",
+    "pages/product/search/search",
+    "pages/product/detail/detail",
+    "pages/product/reservation/index",
+    "pages/risk/start/riskstart",
+    "pages/risk/exam/exam",
+    "pages/risk/result/result",
+    "pages/user/user",
+    "pages/user/about/about",
+    "pages/user/classDetail/classDetail",
+    "pages/user/classroom/classroom",
+    "pages/user/notice/notice",
+    "pages/user/noticeDetail/noticeDetail",
+    "pages/user/reservation/reservation",
+    "pages/user/reservationDetail/reservationDetail",
+    "pages/user/updatePhone/updatePhone",
+    "pages/user/updatePhone2/updatePhone2",
+    "pages/user/userAuth/userAuth",
+    "pages/user/userAuthResult/userAuthResult",
+    "pages/user/userAuthWait/userAuthWait",
+    "pages/user/userinfo/userinfo"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HuiJjin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3699FF",
+    "list": [
+      {
+        "pagePath": "pages/adviser/adviser",
+        "text": "顾问",
+        "iconPath": "images/tab/tab1.png",
+        "selectedIconPath": "images/tab/tab1-s.png"
+      },
+      {
+        "pagePath": "pages/company/company",
+        "text": "公司",
+        "iconPath": "images/tab/tab2.png",
+        "selectedIconPath": "images/tab/tab2-s.png"
+      },
+      {
+        "pagePath": "pages/product/index/index",
+        "text": "产品",
+        "iconPath": "images/tab/tab3.png",
+        "selectedIconPath": "images/tab/tab3-s.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tab/tab4.png",
+        "selectedIconPath": "images/tab/tab4-s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

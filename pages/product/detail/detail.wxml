@@ -1,0 +1,53 @@
+<!--pages/product/detail/detail.wxml-->
+<view class="content">
+	<view class="title tipTitle">{{info.name}}</view>
+	<view class="info">风险评级：
+		<block wx:if="{{(info.trait%1)==0}}">
+			<!-- 整数正常显示就是 -->
+			<image wx:for="{{ info.trait}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+		</block>
+		<block wx:if="{{(info.trait%1)!=0}}">
+			<!-- 4.5小数点要向上取整,直接-1 再 +半颗星星 -->
+			<image wx:for="{{ (info.trait-1)}}" wx:key="index" wx:for-item="item" src='/images/product/star.png' />
+			<image src='/images/product/bstar.png' />
+		</block>
+	</view>
+	<view class="info">产品期限：{{info.term}},{{info.termRemarks}}</view>
+	<view class="info">预期收益：<text>{{info.risk}}</text></view>
+	<view class="info">产品亮点：{{info.dot}}</view>
+	<view class="row">
+		<div class="col-lg-5">
+			<button type="primary" style="margin:10px 0px; " bindtap="toRes">立即预约</button>
+		</div>
+		<div class="col-lg-5">
+			<button type="primary" style="margin:10px 0px;" open-type="contact">在线咨询</button>
+		</div>
+	</view>
+
+</view>
+
+<view class="content">
+	<view class="title tipTitle"><text class="icon"></text>风险揭示</view>
+	<!-- <view class="info">【1】重庆市合川城市建设投资（集团）有限公司(AA+公开发债主体）提供连带责任担保;</view> -->
+	<!-- <view class="info">【2】重庆市合川城市建设投资（集团）有限公司(AA+公开发债主体）提供连带责任担保;</view> -->
+	<text class="info">{{info.riskTips}}</text>
+</view>
+
+<view class="content">
+	<view class="title tipTitle"><text class="icon"></text>项目详情</view>
+	<text class="info">{{info.detail}}</text>
+	<!-- <view class="info">【基本要素】3亿(本次募集1.5亿）</view>
+  <view class="info">【期限】24个月</view>
+  <view class="info">【央企信托-YZ107号集合资金信托计划】</view>
+  <view class="info">【央企信托-YZ107号集合资金信托计划】</view>
+  <view class="info">【项目亮点】</view>
+  <view class="info">1、信托贷款形式放款，均记入融资方担保方征信；</view>
+  <view class="info">2、信托贷款形式放款，均记入融资方担保方征信；发发发顺丰发斯蒂芬发大水</view>
+  <view class="info">3、信托贷款形式放款，均记入融资方担保方征信；发发发顺丰发斯蒂芬发大水</view> -->
+</view>
+
+<view class="content">
+	<view class="title tipTitle"><text class="icon"></text>募集账号</view>
+	<text class="info">{{info.account}}</text>
+	<!-- <view class="info">【光大信托-YZ107号集合资金信托计划】：</view> -->
+</view>

@@ -1,0 +1,49 @@
+<!--page/exam/index.wxml-->
+<!--模拟考试-->
+<page>
+	<view class='content'>
+
+		<view class="content_info">
+			<view>
+				<text class="question-no1">{{current_index+1}}</text>
+				<text class='question-no2'>/{{questionList.length}}</text>
+			</view>
+			<view class="question-title"> {{current_item.title}}</view>
+
+			<!--单选，判断-->
+			<view class='option_list'>
+				<radio-group bindchange="radioChange">
+					<view class="option_list_item">
+						<label class="option_list_item_label" wx:for="{{current_item.detail}}"  wx:key="index">
+							<radio value="{{item.id}}" checked="{{answerList[current_index].id==item.id}}"  />
+							<text class="weui-cell__bd">{{item.option}}</text>
+						</label>
+					</view>
+				</radio-group>
+			</view>
+
+
+			<!-- 不是最后一道题上一题，下一题-->
+			<view wx:if='{{(current_index+1)!=questionList.length}}' style="padding: 0 20px; margin-bottom: 30px;margin-top: 30px;">
+				<view style="margin-bottom: 30px;margin-top: 30px;">
+				<button type="primary"  bindtap="next_question">下 一 题</button>
+				</view>
+				<button type="default" disabled="{{current_index==0}}" bindtap="last_question">上 一 题</button>
+			</view>
+
+
+			<!-- 最后一道题，显示提交，上一题按钮 -->
+			<view wx:if='{{(current_index+1)==questionList.length}}' style="padding: 0 20px; margin-bottom: 30px;margin-top: 30px;">
+				<view style="margin-bottom: 30px;margin-top: 30px;">
+					<button type="primary" disabled=""bindtap="subimt_question" >提 交</button>
+				</view>
+				<button type="default" bindtap="last_question">上 一 题</button>
+			</view>
+
+
+
+
+		</view>
+
+	</view>
+</page>

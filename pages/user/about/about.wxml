@@ -1,0 +1,19 @@
+<view class="content">
+
+	<view class="info">
+
+
+		<view class="row">
+			<text class="col-lg-3 i_text">公司地址</text>
+			<view class="right">{{info.company_addr}}
+				<!-- <text class="i_text" style="padding-left: 10px;" bindtap='copyText' data-text="{{userinfo.company_addr}} ">复制</text> -->
+			</view>
+		</view>
+	<view class="row2">
+			<text class="col-lg-3 i_text">客服电话</text>
+			<view class="right">{{info.service_phone}}</view>
+		</view>
+
+	</view>
+
+</view>

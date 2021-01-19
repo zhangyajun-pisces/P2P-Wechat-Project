@@ -1,0 +1,46 @@
+<view class="content">
+	<!-- <view class="title">
+		<image class="img32" src="../../../images/warning.png" />
+		<text>为保障用户的账号及资金安全，平台会对所有投资人进行身份验证，以保证投资人的个人身份信息真实有效。身份信息一经认证不可修改。</text>
+	</view> -->
+
+	<view class="form-box">
+
+		<!-- <view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">姓名</view>
+			<input style="padding-left: 60rpx;" value="{{username}}" placeholder="请填写你的真实姓名" bindinput="bindUsernameInput" />
+				<image wx:if="{{username.length > 0 }}" id="clear-username" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view> -->
+
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">姓名</view>
+			<view class="right">
+				<input value="{{username}}" placeholder="请填写你的真实姓名" bindinput="bindUsernameInput" />
+				<image wx:if="{{ username.length > 0 }}" id="clear-username" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">证件类型</view>
+			<view class="right">
+				<input value="{{userType}}" disabled />
+			</view>
+		</view>
+		<view class="form-item row">
+			<view class="col-lg-3 txt99">证件号码</view>
+			<view class="right">
+				<input value="{{idcard}}" placeholder="请填写你的证件号码" bindinput="bindIdcardInput" />
+				<image wx:if="{{ idcard.length > 0 }}" id="clear-idcard" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+	</view>
+
+	<view class="waring">
+		为保障用户的账号及资金安全，平台会对所有投资人进行身份验证，以保证投资人的个人身份信息真实有效。身份信息一经认证不可修改。
+	</view>
+	<view style="padding: 0 20px; margin-bottom: 30px;">
+		<button type="primary" style="width: 100%" class="bt_rad" bindtap="userAuth">立即认证</button>
+	</view>
+
+</view>

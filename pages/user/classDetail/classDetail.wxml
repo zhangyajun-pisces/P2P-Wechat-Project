@@ -1,0 +1,14 @@
+<!--pages/user/noticeDetail/noticeDetail.wxml-->
+<view class="content">
+	<view class="note">
+		<view class="title">{{info.title}}</view>
+		<view class="row">
+			<text class="col-5 txt99">{{info.date}}</text>
+			<view class="right txt99" style="padding-right: 10px;"> {{info.number}}人阅读 </view>
+		</view>
+		<view style="  padding: 10px;">
+			<rich-text nodes="{{info.content}}"></rich-text>
+		</view>
+	</view>
+
+</view>

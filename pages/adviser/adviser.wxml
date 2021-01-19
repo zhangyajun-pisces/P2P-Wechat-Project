@@ -1,0 +1,38 @@
+<view class="content">
+
+	<scroll-view scroll-y="true" b style="height:{{winHeight}}px" 
+	bindscrolltoupper="refreshLoad" bindscrolltolower='loadMore'>
+		<view class="search">
+			<navigator url="/pages/adviser/search/search" class="input">
+				<image class="icon"></image>
+				<text class="txt">搜索关键字</text>
+			</navigator>
+		</view>
+
+		<view bindtap="adviserDetail" class="info" wx:for="{{dataList}}" wx:key="index" wx:for-item="item"  data-id="{{item.id}}" data-index="{{index}}">
+			<view class="row">
+				<view class="col-5">
+					<image class="mingpian" src="../../images/log.png" />
+				</view>
+				<view class="right">
+					<view>
+						<view class="title">{{item.name}}</view>
+						<view class="txt99">
+							<image class="img26" src="../../images/adviser/zhiye.png" />{{item.role}}</view>
+						<view class="txt99">
+							<image class="img20" src="../../images/adviser/phone.png" />{{item.mobile}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!--更多-->
+		<view class="weui-loadmore" style='' hidden="{{isHideLoadMore}}">
+			<view class="weui-loading"></view>
+			<view class="weui-loadmore__tips" style='margin-top:0'>正在加载</view>
+		</view>
+		<!-- <view class="weui-loadmore weui-loadmore_line" style='' hidden='{{!isHideLoadMore}}'>
+			<view class="weui-loadmore__tips">已经到底啦</view>
+		</view> -->
+	</scroll-view>
+
+</view>

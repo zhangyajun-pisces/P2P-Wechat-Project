@@ -1,0 +1,1 @@
+<web-view src="{{local_url}}"></web-view>

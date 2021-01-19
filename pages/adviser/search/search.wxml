@@ -1,0 +1,53 @@
+<scroll-view class="container2" style="height: 100%;">
+	<view class="search-header">
+		<view class="input-box">
+			<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png"></image>
+			<input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" placeholder="关键字" />
+			<image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/clearIpt-f71b83e3c2.png"></image>
+		</view>
+		 <view class="srarch" bindtap="goSearch">搜索</view> 
+		<!-- <view class="right" bindtap="closeSearch">取消</view> -->
+	</view>
+	<view class="no-search" wx:if="{{ !searchStatus}}">
+		<view class="search-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+			<view class="h">
+				<text class="title">历史记录</text>
+				<image class="icon" bindtap="clearHistory" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/del1-93f0a4add4.png"></image>
+			</view>
+			<view class="b">
+				<view class="item" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{historyKeyword}}" wx:key="keyword" hover-class="navigator-hover">{{item.keyword}}</view>
+			</view>
+		</view>
+
+		<view class="shelper-list" wx:if="{{keyword}}">
+			<view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" wx:key="id" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
+		</view>
+	</view>
+
+
+	<!-- 搜索结果展示 -->
+	<view  wx:if="{{ searchStatus && advisersList.length}}">
+		<view bindtap="adviserDetail" class="info" wx:for="{{advisersList}}" wx:key="index" wx:for-item="item" 
+		data-id="{{item.id}}" data-index="{{index}}" >
+			<view class="row">
+				<view class="col-5">
+				<image class="mingpian" src="../../../images/log.png" />
+				</view>
+				<view class="right-lt">
+					<view>
+						<view class="title">{{item.name}}</view>
+						<view class="txt99">
+							<image class="img26" src="../../../images/adviser/zhiye.png" />{{item.role}}</view>
+						<view class="txt99">
+							<image class="img20" src="../../../images/adviser/phone.png" />{{item.mobile}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="search-result-empty" wx:if="{{!advisersList.length && searchStatus}}">
+		<image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+		<text class="text">未查找到您要搜索的记录</text>
+	</view>
+</scroll-view>

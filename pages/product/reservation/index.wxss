@@ -1,0 +1,98 @@
+/* pages/product/reservation/index.wxss */
+.content{
+  width: 100%;  
+  height: 100%;  
+  position: absolute;
+  font-size: 12px;
+  box-sizing: border-box;  
+  background-color: #f4f4f4;
+}
+.txt99{
+  color: #999999;
+  padding-left:10rpx;
+  font-size: 12px;
+}
+
+
+
+.right{
+  flex: 1;
+  text-align: left;
+  /* padding-top: 10rpx; */
+ }
+
+.content .row{
+  display: flex;
+  /* padding: 10px  0; */
+  margin: 0px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.col-lg-2 {
+  width: 20%;
+  height: auto;
+  padding-top:10rpx;
+}
+.col-lg-3 {
+  width: 33.3%;
+  height: auto;
+  line-height: 40px;
+}
+
+.form-box {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-left:15px;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.form-item {
+  position: relative;
+  background: #fff;
+  height: 96rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.form-item .username, .form-item .idtype, .form-item .idcard {
+  position: absolute;
+  top: 26rpx;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 44rpx;
+  background: #fff;
+  color: #333;
+  font-size: 30rpx;
+}
+.form-item input{
+  text-align: right;
+  padding-right:25px;
+  line-height: 40px;
+  height: 40px;
+  box-sizing: border-box;
+}
+.form-item .clear {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  z-index: 2;
+  display: block;
+  background: #fff;
+  line-height: 40px;
+  height: 44rpx;
+  width: 44rpx;
+}
+
+.form-item .tip{
+  position: absolute;
+  top: 0rpx;
+  right: 15px;
+  z-index: 2;
+  display: block;
+  background: #fff;
+  line-height: 40px;
+  height: 44rpx;
+  width: 44rpx;
+}

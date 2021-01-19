@@ -1,0 +1,397 @@
+/*内容*/
+.content{
+  width:100%;
+  height:100%;
+}
+.content_info{
+  padding: 10px 10px 0px 10px;
+  padding-bottom:50px;
+ } 
+
+
+.question-no1 {
+  color: #36A2FF;
+  font-weight: 700;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 25px;
+}
+.question-no2 {
+  color: #333;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 25px;
+}
+
+ /*问题标题*/
+.question-title {
+  color: #333;
+  font-weight: 700;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 25px;
+}
+
+.title-info{
+  margin-left:5px;
+} 
+.title-text{
+  display: inline-block;
+  height:16px;
+  line-height: 16px;
+  padding:0px 6px;
+  font-size: 12px;
+  color:#fff;
+  background: #00c355;
+  border-radius:8px;
+  box-sizing: border-box;
+}
+.question-title-level{
+  margin-left:5px;
+  background:#ffc107;
+}
+
+/*问题图片*/
+.question-image{
+  margin-top:10px;
+  text-align: center; 
+}
+.question-image image{
+  max-width:95%;
+  text-align: center;
+  max-height: 160px;  
+}
+
+/*问题答案选项*/
+.option_list{
+  margin-top:10px;
+	color: #2e2e2e;
+  box-sizing: border-box;
+}
+.option_list_item{
+  padding:0px 5px;
+	line-height: 3;
+	border-top: 1px solid #efefef;
+}
+.option_list_item_label{
+    display: inline-block;
+    vertical-align: middle;
+    width:100%;
+    line-height:22px;
+}
+.option_list_item_icon{
+    position: relative;
+    top:-2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50px;
+    border:#000 solid 1px;
+    box-sizing: border-box;
+}
+.option_list_item_icon_image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.option_list_item_text{
+  line-height: 3;
+}
+
+/*多选题提交*/
+.submitBtn{
+  width:80%;
+  height:40px;
+  margin:20px auto;
+  line-height:40px;
+  text-align:center;
+  color:#fff;
+  background:#00C355;
+  border-radius:40px;
+}
+
+/*上一题*/ 
+.last_one{
+  position:fixed;
+  z-index:999;
+  left:10px;
+  top:35%;
+  width:45px;
+  height:45px;
+  text-align:center;
+  line-height:45px;
+  background:#eee;
+  border-radius:45px;
+  opacity:0.6;
+}
+
+/*下一题*/
+.next_one{
+  position:fixed;
+  z-index:999;
+  right:10px;
+  top:35%;
+  width:45px;
+  height:45px;
+  text-align:center;
+  line-height:45px;
+  background:#eee;
+  border-radius:45px;
+  opacity:0.6;
+}
+
+/*底部*/
+.content_footer{
+  position: fixed;
+  z-index: 99;
+  bottom: 0px;
+  width:100%;
+  height:50px;
+  line-height:50px;
+  background: #fff;
+  border-top:solid #efefef 2px;
+  box-sizing: border-box; 
+}
+.footer_item{
+  height:100%;
+  float:left;
+  text-align: center;
+}
+.item_true_count{
+  float:left;
+  width:50%;
+  height:100%;
+  color:#00C355;
+  text-align:center;
+}
+.item_false_count{
+  float:right;
+  width:50%;
+  height:100%;
+  color:red;
+  text-align:center;
+}
+.count_icon{
+  margin-top:8px;
+}
+.count_text{
+  position:relative;
+  top:-2px;
+  margin-left:2px;
+}
+.item_commit_paper{
+  width:95%;
+  height:30px;
+  line-height:30px;
+  margin:10px 0px;
+  border:1px solid #00C335;
+  border-radius:30px;
+}
+.item_commit_paper_time{
+  width:60%;
+  float:left;
+}
+.item_commit_paper_btn{
+  width:40%;
+  float:left;
+  color:#fff;
+  background:#00C335;
+  border-radius:30px;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}
+
+/*问题列表*/
+.question_list_warp{
+  position: fixed;
+  top:0px;
+  width: 100%;
+  height: 100%;
+  z-index: 990; 
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  background: #000000;
+}
+.question_list_info{
+  position: fixed;
+  z-index:1000;
+  bottom:0px;
+  height: 350px;
+  width:100%;
+  margin:0px auto;
+  padding:0;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  background: #fff;
+  text-align: center;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+
+}
+.list_info_item{
+  display:flex;
+  justify-content: space-around;
+  float:left;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  border-radius:50px;
+  margin:5px;
+  opacity: 1;
+}
+.info_item_text_true{
+  width:100%;
+  height:100%;
+  background-color: #d1f7d2;
+  border: 1px solid #00c355;
+  color: #00c355;
+  border-radius:50%;
+  box-sizing: border-box;
+}
+.info_item_text_false{
+  width:100%;
+  height:100%;
+  background-color: #ffddde; 
+  border: 1px solid #ff4949;
+  color: #ff4949;
+  border-radius:50%;
+  box-sizing: border-box;
+}
+.info_item_text_select{
+  width:100%;
+  height:100%;
+  border:#ccc solid 1px;
+  background: #ddd;
+  border-radius:50%;
+  box-sizing: border-box;
+}
+.info_item_text_noselect{
+  width:100%;
+  height:100%;
+  border:#ccc solid 1px;
+  border-radius:50%;
+  box-sizing: border-box;
+}
+
+/*交卷确认*/
+.commit_paper_warp{
+  background: #000000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0px;
+  opacity: 0.6;
+  z-index: 990;
+  filter: alpha(opacity=60);
+}
+.commit_paper_confirm{
+  z-index:1000;
+  position: fixed;
+  width: 95%;
+  height: 200px;
+  margin: 0px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, .15);
+  top:20%;
+  left:50%;
+  margin-left:-47.5%;
+  text-align: center;
+}
+.paper_confirm_info{
+  width:100%;
+  height:150px;
+}
+.confirm_info_item{
+  width:100%;
+  height:50px;
+  line-height:50px;
+}
+.paper_confirm_operate{
+  width:100%;
+  height:50px;
+  line-height:50px;
+  color:#00C335;
+  border-top:1px solid #efefef;
+  box-sizing:border-box;
+}
+.cancel_operate{
+  float:left;
+  width:50%;
+  border-right:1px solid #efefef;
+  box-sizing:border-box;
+}
+.confirm_operate{
+  float:left;
+  width:50%;
+}
+
+/*成绩不合格提醒*/
+.unqualified_reminding_warp{
+  background: #000000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0px;
+  opacity: 0.6;
+  z-index: 990;
+  filter: alpha(opacity=60);
+}
+.unqualified_reminding{
+  z-index:1000;
+  position: fixed;
+  width: 90%;
+  height: 270px;
+  margin: 0px;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, .15);
+  top:20%;
+  left:50%;
+  margin-left:-45%;
+  text-align: center;
+}
+.unqualified_reminding_info{
+  width:100%;
+  height:230px;
+  border-bottom:1px solid #efefef;
+  box-sizing:border-box;
+}
+.unqualified_reminding_info_title{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  font-size:18px;
+  color:#FE7D41;
+  font-weight: bold;
+}
+.unqualified_reminding_info_charts{
+  width:100%;
+  height:150px;
+}
+.unqualified_reminding_info_score{
+  width:100%;
+  height:40px;
+  line-height:40px;
+}
+.unqualified_reminding_operate{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  color:#00C335;
+}
+.unqualified_reminding_operate_item{
+  float:left;
+  width:33.33%;
+  border-right:1px solid #efefef;
+  box-sizing: border-box;
+}
+.unqualified_reminding_operate_item:last-child{
+  border:none;
+}

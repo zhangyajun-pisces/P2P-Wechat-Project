@@ -1,0 +1,50 @@
+<view class="container">
+
+	<view class="form-box">
+		<view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">手机号</view>
+				<input style="padding-left: 60rpx;" value="{{mobile}}" placeholder="请输入您的手机号" bindinput="bindMobileInput" />
+				<image wx:if="{{ mobile.length > 0 }}" id="clear-mobile" class="clear" src="/images/clear_input.png" catchtap="clearInput"></image>
+			</view>
+		</view>
+		<!-- <view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">验证码</view>
+				<input style="padding-left: 60rpx;" value="{{verCode}}" placeholder="请输入图片验证码" bindinput="bindVerCodeInput" /> -->
+		<!-- <image wx:if="{{verCode.length > 0 }}" id="clear-vercode" class="clear" src="/images/clear_input.png" catchtap="clearInput"/> -->
+		<!-- <view style="line-height: 100rpx; ">{{checkCode}}</view> -->
+		<!-- <image style="line-height: 100rpx; float: right;height: 90rpx;width: 136rpx;" src="https://dl.reg.163.com/cp?pd=yanxuan_web&pkid=SkeBZeG&random=1489903563234"></image>
+			</view>
+		</view> -->
+
+		<view class="form-item">
+			<view style="display: flex;">
+				<view style="line-height: 100rpx;">短信码</view>
+				<input style="padding-left: 60rpx;" value="{{smsCode}}" placeholder="请输入短信验证码" bindinput="bindSmsInput" />
+				<!-- <image wx:if="{{smsCode.length > 0 }}" id="clear-sms_code" class="clear" src="/images/clear_input.png" catchtap="clearInput"/> -->
+ 				<view style="line-height: 100rpx; ">
+					<text bindtap="getSmsCode" style="color:{{getSmsCodeBtnColor}}" wx:if="{{getSmsCodeBtnTxt=='发送验证码'}}">{{getSmsCodeBtnTxt}}</text>
+					<text style="color:{{getSmsCodeBtnColor}}"  wx:if="{{getSmsCodeBtnTxt!='发送验证码'}}">{{getSmsCodeBtnTxt}}</text>
+				</view>
+			</view>
+		</view>
+
+
+		<view style="padding: 0 20px;margin-bottom: 30px;margin-top: 30px;">
+			<button type="primary"   class="bt_rad" bindtap='phoneLogin' style="width: 100%" disabled="{{!registDisabled}}">立即登录</button>
+		</view>
+
+		<!--footer-->
+		<view class="foot">
+			<view>未注册的手机号登录时将自动注册</view>
+			<view>且代表您已同意<text style="color: #3699FF;" bindtap="regService">《注册服务协议》</text></view>
+		</view>
+
+		<view class="foot">
+			<view>使用第三方账号登录</view>
+			<button type="primary" open-type="getUserInfo" size="mini" bindgetuserinfo="wxLogin">微信登录</button>
+		</view>
+	</view>
+
+</view>

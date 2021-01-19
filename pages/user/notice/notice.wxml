@@ -1,0 +1,19 @@
+<wxs module="tutil" src="../../../utils/date.wxs"></wxs>
+<view class="content">
+	<navigator url="/pages/user/noticeDetail/noticeDetail?noticeId={{item.noticeId}}" class="info" wx:for="{{noticeList}}" wx:key="index" wx:for-item="item" data-id="{{item.noticeId}}" >
+		<view class="row">
+			<text class="col-5">{{item.date}}</text>
+			<view class="right">
+				<text wx:if='{{item.read}}' class="read"> 已读</text>
+				<text wx:if='{{!item.read}}' class="noread"> 未读</text>
+			</view>
+		</view>
+    <view> {{item.title}} </view>
+	</navigator>
+
+	<!-- style="padding: 0 20px;" -->
+	<!-- <view>
+		<button type="default" size="mini" bindtap='logOut' style="width: 100%">退出登录</button>
+	</view> -->
+
+</view>

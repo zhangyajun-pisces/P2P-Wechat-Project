@@ -1,0 +1,81 @@
+<!-- <wxs module="date" src="../../utils/date.wxs"></wxs> -->
+<view class='container'>
+	<view class="top">
+		<view class="top_info">
+			<view class="top_info_avatar">
+				<image mode="scaleToFill" wx:if="{{hasLogin}}" src='{{info.avatarUrl}}'></image>
+				<image mode="scaleToFill" wx:if="{{!hasLogin || !info.avatarUrl}}" src='../../images/dufault_adv.png'></image>
+			</view>
+			<view class="top_info_main">
+				<view wx:if="{{hasLogin}}">
+					<view>
+						<text class="white-txt">{{info.nickname}}</text>
+						<text class="top_info_main_atte white-txt" wx:if="{{info.auth}}">实名认证</text>
+						<text class="no_auth white-txt" wx:if="{{!info.auth}}">未认证</text>
+					</view>
+					<view class="white-txt">{{info.mobile}}</view>
+				</view>
+				<view wx:if="{{!hasLogin}}" class="white-txt" bindtap='chenckLogin'> 请登录 </view>
+			</view>
+			<view class="top_info_set" wx:if="{{hasLogin}}" bindtap="settingInfo">
+				<image mode="scaleToFill" src='../../images/image/icon_set.png'></image>
+			</view>
+		</view>
+	</view>
+	<view class="news" wx:if="{{hasLogin && info.auth}}">
+		<navigator url="/pages/user/notice/notice" class="news_title">
+			<view class="news_title_lf">兑付公告</view>
+			<view class="news_title_rt">
+				<image mode="scaleToFill" src='../../images/image/icon_arrow_rt.png'></image>
+			</view>
+		</navigator>
+		<navigator wx:if="{{noticeInfo}}" url="/pages/user/noticeDetail/noticeDetail?noticeId={{noticeInfo.noticeId}}" class="news_main">
+			<!-- <view class="news_main"> -->
+			<view class="news_main_top">{{noticeInfo.title}} </view>
+			<view class="news_main_bottom">
+				<view class="news_main_bottom_lf">{{noticeInfo.date}}</view>
+				<view class="news_main_bottom_rt">
+					<text wx:if='{{noticeInfo.read}}' class="read"> 已读</text>
+					<text wx:if='{{!noticeInfo.read}}' class="noread"> 未读</text>
+				</view>
+			</view>
+		</navigator>
+	</view>
+	<view class="nav_list">
+		<view class="nav_list_title">个人相关</view>
+		<view class="nav_list_main">
+			<view class="nav_list_item" bindtap="myOrder">
+				<image mode="scaleToFill" src='../../images/image/icon_myorder.png'></image>
+				<view>我的预约</view>
+			</view>
+			<view class="nav_list_item" bindtap="authName">
+				<image mode="scaleToFill" src='../../images/image/icon_myatte.png'></image>
+				<view>实名认证</view>
+			</view>
+			<view class="nav_list_item" bindtap="riskCheck">
+				<image mode="scaleToFill" src='../../images/image/icon_mydanger.png'></image>
+				<view>风险评估</view>
+			</view>
+		</view>
+	</view>
+	<view class="btn_list">
+		<navigator url="/pages/user/classroom/classroom" class="btn_item">
+			<view class="btn_item_lf">
+				<image mode="scaleToFill" src='../../images/image/icon_class.png'></image>
+				<text>理财小课堂</text>
+			</view>
+			<view class="btn_item_rt">
+				<image mode="scaleToFill" src='../../images/image/icon_arrow_rt.png'></image>
+			</view>
+		</navigator>
+		<navigator url="/pages/user/about/about" class="btn_item">
+			<view class="btn_item_lf">
+				<image mode="scaleToFill" src='../../images/image/icon_contect.png'></image>
+				<text>联系我们</text>
+			</view>
+			<view class="btn_item_rt">
+				<image mode="scaleToFill" src='../../images/image/icon_arrow_rt.png'></image>
+			</view>
+		</navigator>
+	</view>
+</view>

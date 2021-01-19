@@ -1,0 +1,5 @@
+<view class="content">
+	<image class="img" mode="widthFix" src="{{img1}}"> </image>
+	<image class="img"  mode="widthFix" src="{{img2}}"> </image>
+	<image class="img" mode="widthFix" src="{{img3}}"> </image>
+</view>

@@ -1,0 +1,88 @@
+<wxs module="date" src="../../../utils/date.wxs"></wxs>
+<view class="content">
+
+	<view class="info" wx:if="{{status==1}}">
+		<view class="row">
+			<text class="col-3 txt99">预约产品</text>
+			<view class="right" bindtap="goToProduct"> {{info.productName}}
+				<image class="img22" src="../../../images/right.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">预约金额</text>
+			<view class="right">{{info.amount}} 万</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">预约时间</text>
+			<view class="right">{{info.createDate}} </view>
+			<!-- <view class="right">{{date.formatTime(info.createDate,'yyyy-MM-dd')}} </view> -->
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">预约人姓名</text>
+			<view class="right">{{info.name}} </view>
+		</view>
+		<view class="row2">
+			<text class="col-3 txt99">预约人手机</text>
+			<view class="right">{{info.mobile}} </view>
+		</view>
+	</view>
+	<view style="padding: 0 20px;margin-top: 40px;" wx:if="{{status==1}}">
+		<button type="primary"  class="bt_rad" bindtap='cancelReservation' style="width: 100%">取消预约</button>
+	</view>
+
+<!-- 下面是status=2 已签约 -->
+<view class="info" wx:if="{{status==2}}">
+		<view class="row">
+			<text class="col-3 txt99">签约产品</text>
+			<view class="right" bindtap="goToProduct"> {{info.productName}}
+				<image class="img22" src="../../../images/right.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">签约金额</text>
+			<view class="right">{{info.amount}} 万</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">签约时间</text>
+			<view class="right">{{info.defineDate}} </view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">签约人姓名</text>
+			<view class="right">{{info.name}} </view>
+		</view>
+		<view class="row2">
+			<text class="col-3 txt99">签约人手机</text>
+			<view class="right">{{info.mobile}} </view>
+		</view>
+	</view>
+	<!-- 下面是status=3  已取消 -->
+	
+<view class="info" wx:if="{{status==3}}">
+		<view class="row">
+			<text class="col-3 txt99">预约产品</text>
+			<view class="right" bindtap="goToProduct"> {{info.productName}}
+				<image class="img22" src="../../../images/right.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">预约金额</text>
+			<view class="right">{{info.amount}} 万</view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">预约时间</text>
+			<view class="right">{{info.createDate}} </view>
+		</view>
+				<view class="row">
+			<text class="col-3 txt99">取消时间</text>
+			<view class="right">{{info.cancelDate}} </view>
+		</view>
+		<view class="row">
+			<text class="col-3 txt99">取消人姓名</text>
+			<view class="right">{{info.name}} </view>
+		</view>
+		<view class="row2">
+			<text class="col-3 txt99">取消人手机</text>
+			<view class="right">{{info.mobile}} </view>
+		</view>
+	</view>
+</view>

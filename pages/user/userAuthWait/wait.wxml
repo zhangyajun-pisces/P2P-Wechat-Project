@@ -1,0 +1,15 @@
+<view class="content">
+	<view class="info">
+		<!-- <view class="txt99">您的投资类型为</view>
+		<view class="txt-18f">保守型</view> -->
+		<view>
+			<image class="headimg" mode="aspectFit" src='../../../images/wait.png'></image>
+		</view>
+
+		<view class="foot">
+			<view>您提交的实名认证资料正在</view>
+      <view>审核中，请耐心等候！</view>
+		</view>
+
+	</view>
+</view>

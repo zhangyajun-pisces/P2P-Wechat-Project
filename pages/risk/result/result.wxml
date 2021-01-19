@@ -1,0 +1,17 @@
+<view class="content">
+	<view class="info">
+		<view class="txt99">您的投资类型为</view>
+		<view class="txt-18f">{{level}}</view>
+		<view>
+			<image wx:if="{{score<=30}}" class="headimg" mode="aspectFit" src='../../../images/risk/result-b.png'></image>
+			<image wx:if="{{score>30 && score<60}}" class="headimg" mode="aspectFit" src='../../../images/risk/result-w.png'></image>
+			<image wx:if="{{score>=60}}" class="headimg" mode="aspectFit" src='../../../images/risk/result-j.png'></image>
+		</view>
+		<view class="txt99">{{describe}}</view>
+		<view class="foot">
+			<button type="primary"  class="bt_rad" bindtap='successClose' style="width: 100%">确定</button>
+			<view class="txt"  bindtap='reStart'>重新评估</view>
+		</view>
+
+	</view>
+</view>
